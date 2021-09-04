@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gql
+  labels:
+    app: gql
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: gql
+      labels:
+        app: gql
+    spec:
+      containers:
+        - name: gql
+          image: gql:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+              name: web
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: gql

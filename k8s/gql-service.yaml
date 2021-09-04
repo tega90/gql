@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gql
+spec:
+  selector:
+    app: gql
+  ports:
+    - port: 8080
+      name: web
+      targetPort: 8080
+      nodePort: 32101
+  type: NodePort

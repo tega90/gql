@@ -1,0 +1,10 @@
+type Event {
+    id: ID
+    name: String
+    date: DateTime
+}
+
+input EventInput {
+    name: String
+    date: DateTime
+}
